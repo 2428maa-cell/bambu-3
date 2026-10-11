@@ -11,7 +11,7 @@ const chat = require('./lib/chat');
 const { Translator } = require('./lib/translate');
 
 const PORT = Number(process.env.PORT) || 3000;
-const PUBLIC = path.join(__dirname, 'public');
+const PUBLIC = path.join(__dirname,'lib',  'public');
 
 const store = new Store();
 store.load();
