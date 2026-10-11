@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bambu Radar · מכ"ם שמועות</title>
+  <meta name="description" content="חדשות ושמועות על Bambu Lab בזמן אמת, עם צ'אט AI">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"></span>
+      <div>
+        <h1>Bambu Radar</h1>
+        <p>מכ"ם שמועות וחדשות על Bambu Lab</p>
+      </div>
+    </div>
+    <div class="live" id="live" title="מצב החיבור לשרת">
+      <span class="dot"></span>
+      <span id="liveText">מתחבר…</span>
+    </div>
+  </header>
+
+  <nav class="tabs-mobile" id="mobileTabs">
+    <button class="active" data-view="feed">פיד</button>
+    <button data-view="chat">צ'אט AI</button>
+  </nav>
+
+  <main class="layout">
+    <section class="feed" id="feedView">
+      <div class="controls">
+        <div class="chips" id="kindChips" role="tablist">
+          <button class="chip active" data-kind="all">הכל <b id="c-all">0</b></button>
+          <button class="chip" data-kind="rumor">שמועות <b id="c-rumor">0</b></button>
+          <button class="chip" data-kind="official">רשמי <b id="c-official">0</b></button>
+          <button class="chip" data-kind="news">חדשות <b id="c-news">0</b></button>
+          <button class="chip" data-kind="community">קהילה <b id="c-community">0</b></button>
+        </div>
+        <input id="search" type="search" placeholder="חיפוש בכתבות ובשמועות…" dir="auto" autocomplete="off">
+      </div>
+      <label class="toggle"><input type="checkbox" id="origToggle"> הצג במקור באנגלית (ברירת מחדל: מתורגם לעברית)</label>
+      <div class="sources-line" id="sourcesLine"></div>
+      <div id="list" class="list" aria-live="polite"></div>
+      <button id="more" class="more" hidden>טען עוד</button>
+      <p class="empty" id="empty" hidden>אין עדיין פריטים. השרת אוסף עכשיו - זה אמור להתמלא תוך דקה.</p>
+    </section>
+
+    <aside class="chat" id="chatView">
+      <div class="chat-head">
+        <h2>שאל את הרדאר</h2>
+        <p>הצ'אט עונה על סמך מה שנאסף באתר, ומציין מקורות</p>
+      </div>
+      <div class="messages" id="messages">
+        <div class="msg bot">היי! אפשר לשאול אותי על שמועות, מוצרים חדשים, קושחה ועוד. נסה אחת מהשאלות:</div>
+        <div class="suggest" id="suggest">
+          <button>מה השמועות האחרונות?</button>
+          <button>יש מדפסת חדשה בדרך?</button>
+          <button>סכם לי את מה שקרה השבוע</button>
+          <button>מה חדש על ה-AMS?</button>
+        </div>
+      </div>
+      <form id="chatForm" class="chat-form">
+        <input id="chatInput" placeholder="כתוב שאלה…" dir="auto" autocomplete="off" maxlength="500">
+        <button type="submit" id="sendBtn">שלח</button>
+      </form>
+    </aside>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
