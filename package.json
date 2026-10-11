@@ -1,0 +1,14 @@
+{
+  "name": "bambu-radar",
+  "version": "1.0.0",
+  "description": "מכ\"ם שמועות Bambu Lab - איסוף חדשות ושמועות בזמן אמת + צ'אט AI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/selftest.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
